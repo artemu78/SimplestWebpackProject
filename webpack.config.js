@@ -23,7 +23,8 @@ module.exports = {
   new BrowserSyncPlugin({
     host: 'localhost',
     port: 3000,
-    proxy: 'http://127.0.0.1:8080/'
+    proxy: 'http://127.0.0.1:8080/',
+    notify: false // disable the BrowserSync notification
   })
   ],
 };

@@ -23,7 +23,7 @@ module.exports = {
   new BrowserSyncPlugin({
     host: 'localhost',
     port: 3000,
-    server: { baseDir: ['dist'] }
+    proxy: 'http://127.0.0.1:8080/'
   })
   ],
 };

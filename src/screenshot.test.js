@@ -16,7 +16,23 @@ describe("Screenshot testing", () => {
     await browser.close();
   });
 
-  test("homepage should match screenshot", async () => {
+  test("homepage should match screenshot, desktop", async () => {
+    await page.setViewport({
+      width: 1024,
+      height: 768,
+      deviceScaleFactor: 1,
+    });
+    await page.goto("http://localhost:3000"); // replace with your local/test URL
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
+  test("homepage should match screenshot, mobile", async () => {
+    await page.setViewport({
+      width: 375,
+      height: 667,
+      deviceScaleFactor: 1,
+    });
     await page.goto("http://localhost:3000"); // replace with your local/test URL
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

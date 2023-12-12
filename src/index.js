@@ -1,2 +1,3 @@
-import './styles.css';
-console.log('Hello, Webpack!');
+import "./styles.css";
+
+console.log("Hello, from webpack watcher");
